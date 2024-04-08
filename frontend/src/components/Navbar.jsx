@@ -8,12 +8,12 @@ function Navbar() {
   const handleRedirect = () => {
     navigate("/");
   };
-  const flags = useFlags(["font_size", "maintainance", "theme"]);
+  const flags = useFlags(["font_size", "background_color"]);
   const font_size = flags.font_size.value;
   console.log(font_size);
 
   return (
-    <nav style={navStyle}>
+    <div style={navStyle}>
       <div style={navContentStyle}>
         <div
           style={{ ...brandStyle, fontSize: font_size ? font_size : "2rem" }}
@@ -22,7 +22,7 @@ function Navbar() {
           Adventurize
         </div>
       </div>
-    </nav>
+    </div>
   );
 }
 
@@ -32,10 +32,7 @@ const navStyle = {
 };
 
 const navContentStyle = {
-  maxWidth: "1200px",
-  margin: "0 auto",
-  display: "flex",
-  justifyContent: "center",
+  textAlign: "center",
 };
 
 const brandStyle = {

@@ -24,23 +24,19 @@ function Home() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label>
-          Location:
+        <label style={locLabel}>
+          Please enter the location:
+          <br />
           <input
             type="text"
             value={location}
+            style={locInput}
             onChange={(e) => setLocation(e.target.value)}
+            placeholder="Location"
           />
         </label>
-        <label>
-          Category:
-          <input
-            type="text"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          />
-        </label>
-        <button type="submit">Submit</button>
+
+        <button style={locSubmit} type="submit">Submit</button>
       </form>
       {loading && <p>Loading...</p>}
       {response && (
@@ -71,5 +67,25 @@ function Home() {
     </div>
   );
 }
-
+const locLabel = {
+  display: "flex",
+  flexDirection: "column",
+  width: "20%",
+  margin: "4rem auto 2rem auto"
+};
+const locInput = {
+  margin: "0.5rem 0",
+  padding: "0.5rem",
+}
+const locSubmit = {
+  display: "block", // Ensure the button takes full width
+  margin: "0 auto", // Center the button horizontally
+  padding: "0.5rem 1rem",
+  backgroundColor: "#007bff",
+  border: "none",
+  borderRadius: "0.25rem",
+  color: "white",
+  fontWeight: 800,
+  cursor: "pointer",
+};
 export default Home;
