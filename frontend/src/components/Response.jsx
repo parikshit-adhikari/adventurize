@@ -87,7 +87,8 @@ const dropdownStyle = {
   backgroundRepeat: "no-repeat",
   backgroundPosition: "right 8px top 50%",
   paddingRight: "30px",
-  cursor: "pointer",
+    cursor: "pointer",
+  margin: "1rem"
 };
 
 const dropdownContainerStyle = {

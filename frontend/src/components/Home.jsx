@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import Spinner from "./Spinner";
 import Response from "./Response";
+import { useFlags } from "flagsmith/react";
 
 function Home() {
   const [location, setLocation] = useState("");
   const [category, setCategory] = useState("");
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [display, setDisplay] = useState(true);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,24 +28,28 @@ function Home() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        {!loading && (
-          <label style={locLabel}>
-            Please enter the location:
-            <br />
-            <input
-              type="text"
-              value={location}
-              style={locInput}
-              onChange={(e) => setLocation(e.target.value)}
-              placeholder="Location"
-            />
-          </label>
-        )}
+        {!loading && response === null && (
+          <>
+            {!loading && (
+              <label style={locLabel}>
+                Please enter the location:
+                <br />
+                <input
+                  type="text"
+                  value={location}
+                  style={locInput}
+                  onChange={(e) => setLocation(e.target.value)}
+                  placeholder="Location"
+                />
+              </label>
+            )}
 
-        {!loading && (
-          <button style={locSubmit} type="submit">
-            Submit
-          </button>
+            {!loading && (
+              <button style={locSubmit} type="submit">
+                Submit
+              </button>
+            )}
+          </>
         )}
       </form>
       {loading && <Spinner size={60} style={"auto"} />}

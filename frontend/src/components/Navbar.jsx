@@ -1,22 +1,19 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useFlags, useFlagsmith } from "flagsmith/react";
+import { useFlags } from "flagsmith/react";
 
 function Navbar() {
-  const navigate = useNavigate();
-
   const handleRedirect = () => {
-    navigate("/");
+    window.location.reload();
   };
-  const flags = useFlags(["font_size", "background_color"]);
-  const font_size = flags.font_size.value;
-  console.log(font_size);
+  const flags = useFlags(["navbar_font"]);
+  const font_size = flags.navbar_font.value;
+  console.log("navbarfont", font_size);
 
   return (
     <div style={navStyle}>
       <div style={navContentStyle}>
         <div
-          style={{ ...brandStyle, fontSize: font_size ? font_size : "2rem" }}
+          style={{ ...brandStyle, fontSize: font_size ? font_size : "1rem" }}
           onClick={handleRedirect}
         >
           Adventurize
