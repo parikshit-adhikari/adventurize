@@ -4,6 +4,7 @@ import Spinner from "./Spinner";
 import Response from "./Response";
 import { useFlags } from "flagsmith/react";
 import Navbar from "./Navbar";
+import ReactWave from "./ReactWave";
 
 function Home() {
   const [location, setLocation] = useState("");
@@ -13,7 +14,7 @@ function Home() {
 
   const flags = useFlags(["maintainence", "theme"]);
   const isMaintenance = flags.maintainence.enabled;
-  const isDark = flags.theme.enabled
+  const isDark = flags.theme.enabled;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,14 +31,14 @@ function Home() {
   };
 
   return (
-    <div style={isDark ? homeDivDark : null}>
+    <div style={isDark ? homeDivDark : homeDivLight}>
       {isMaintenance ? (
         <h2 style={{ marginTop: "5rem", textAlign: "center" }}>
           Website is currently under maintainence.
         </h2>
       ) : (
         <div>
-            <Navbar dark={isDark} />
+          <Navbar dark={isDark} />
           <form onSubmit={handleSubmit}>
             {!loading && response === null && (
               <>
@@ -65,6 +66,7 @@ function Home() {
           </form>
           {loading && <Spinner size={60} style={"auto"} />}
           {response && <Response response={response} />}
+          <ReactWave dark={isDark} />
         </div>
       )}
     </div>
@@ -74,6 +76,9 @@ const homeDivDark = {
   backgroundColor: "#090f1a",
   height: "100vh",
   color: "white",
+};
+const homeDivLight = {
+  height: "100vh",
 };
 const locLabel = {
   display: "flex",

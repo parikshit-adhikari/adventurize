@@ -13,10 +13,4 @@ function App() {
     </FlagsmithProvider>
   );
 }
-const appMainDivDark = {
-  backgroundColor: "black",
-};
-const appMainDivLight = {
-  backgroundColor: "red",
-};
 export default App;
