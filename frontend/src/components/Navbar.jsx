@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useFlags, useFlagsmith } from "flagsmith/react";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -7,11 +8,17 @@ function Navbar() {
   const handleRedirect = () => {
     navigate("/");
   };
+  const flags = useFlags(["font_size", "maintainance", "theme"]);
+  const font_size = flags.font_size.value;
+  console.log(font_size);
 
   return (
     <nav style={navStyle}>
       <div style={navContentStyle}>
-        <div style={brandStyle} onClick={handleRedirect}>
+        <div
+          style={{ ...brandStyle, fontSize: font_size ? font_size : "2rem" }}
+          onClick={handleRedirect}
+        >
           Adventurize
         </div>
       </div>
@@ -33,7 +40,6 @@ const navContentStyle = {
 
 const brandStyle = {
   color: "#fff",
-  fontSize: "24px",
   cursor: "pointer",
 };
 
