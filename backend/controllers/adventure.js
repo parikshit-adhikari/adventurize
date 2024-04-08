@@ -3,8 +3,8 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const { response } = require("express");
 require("dotenv").config();
 
-const genAI = new GoogleGenerativeAI(process.env.API_KEY);
-const weather_api = process.env.WEATHER_API;
+const genAI = new GoogleGenerativeAI("AIzaSyAQUq0N79Bb6pbaogUPnCZ4H5X8s93Atkw");
+const weather_api = "05a8440e03e74621d9980c4a10eea0af";
 
 const user = async (req, res) => {
   let genairesponse;

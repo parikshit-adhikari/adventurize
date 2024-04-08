@@ -5,6 +5,6 @@ const {
   user
 } = require("../controllers/adventure");
 
-router.post("/userip", user);
+router.get("/userip", user);
 
 module.exports = router;
