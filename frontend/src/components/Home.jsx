@@ -11,8 +11,9 @@ function Home() {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const flags = useFlags(["maintainence"]);
+  const flags = useFlags(["maintainence", "theme"]);
   const isMaintenance = flags.maintainence.enabled;
+  const isDark = flags.theme.enabled
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,14 +30,14 @@ function Home() {
   };
 
   return (
-    <>
+    <div style={isDark ? homeDivDark : null}>
       {isMaintenance ? (
         <h2 style={{ marginTop: "5rem", textAlign: "center" }}>
           Website is currently under maintainence.
         </h2>
       ) : (
         <div>
-          <Navbar />
+            <Navbar dark={isDark} />
           <form onSubmit={handleSubmit}>
             {!loading && response === null && (
               <>
@@ -66,10 +67,14 @@ function Home() {
           {response && <Response response={response} />}
         </div>
       )}
-    </>
+    </div>
   );
 }
-
+const homeDivDark = {
+  backgroundColor: "#090f1a",
+  height: "100vh",
+  color: "white",
+};
 const locLabel = {
   display: "flex",
   flexDirection: "column",

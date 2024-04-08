@@ -1,7 +1,7 @@
 import React from "react";
 import { useFlags } from "flagsmith/react";
 
-function Navbar() {
+function Navbar({ dark }) {
   const handleRedirect = () => {
     window.location.reload();
   };
@@ -11,10 +11,10 @@ function Navbar() {
   console.log("navbarfont", font_size);
 
   return (
-    <div style={navStyle}>
+    <div style={dark ? navStyleDark : navStyle}>
       <div style={navContentStyle}>
         <div
-          style={{ ...brandStyle, fontSize: isEnabled ? font_size : "1rem" }}
+          style={{ ...brandStyle, fontSize: isEnabled ? font_size : "1.5rem" }}
           onClick={handleRedirect}
         >
           Adventurize
@@ -23,7 +23,10 @@ function Navbar() {
     </div>
   );
 }
-
+const navStyleDark = {
+  backgroundColor: "#0f1c30",
+  padding: "10px 0",
+};
 const navStyle = {
   backgroundColor: "#007bff",
   padding: "10px 0",
