@@ -1,0 +1,24 @@
+{
+  "api": "https://edge.api.flagsmith.com/api/v1/",
+  "environmentID": "EKzQmuy6hA373pNwFrMA7X",
+  "flags": {
+    "theme": {
+      "id": 89791,
+      "enabled": false,
+      "value": "dark"
+    },
+    "navbar_font": {
+      "id": 89826,
+      "enabled": false,
+      "value": 40
+    },
+    "maintainence": {
+      "id": 89828,
+      "enabled": true,
+      "value": true
+    }
+  },
+  "ts": null,
+  "traits": {},
+  "evaluationEvent": null
+}

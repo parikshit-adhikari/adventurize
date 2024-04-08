@@ -6,6 +6,7 @@ function Navbar() {
     window.location.reload();
   };
   const flags = useFlags(["navbar_font"]);
+  const isEnabled = flags.navbar_font.enabled;
   const font_size = flags.navbar_font.value;
   console.log("navbarfont", font_size);
 
@@ -13,7 +14,7 @@ function Navbar() {
     <div style={navStyle}>
       <div style={navContentStyle}>
         <div
-          style={{ ...brandStyle, fontSize: font_size ? font_size : "1rem" }}
+          style={{ ...brandStyle, fontSize: isEnabled ? font_size : "1rem" }}
           onClick={handleRedirect}
         >
           Adventurize

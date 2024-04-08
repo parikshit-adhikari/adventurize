@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import flagsmith from "flagsmith";
 import { FlagsmithProvider } from "flagsmith/react";
@@ -10,10 +9,14 @@ function App() {
       options={{ environmentID: "EKzQmuy6hA373pNwFrMA7X" }}
       flagsmith={flagsmith}
     >
-      <Navbar />
       <Home />
     </FlagsmithProvider>
   );
 }
-
+const appMainDivDark = {
+  backgroundColor: "black",
+};
+const appMainDivLight = {
+  backgroundColor: "red",
+};
 export default App;

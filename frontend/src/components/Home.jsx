@@ -3,13 +3,16 @@ import axios from "axios";
 import Spinner from "./Spinner";
 import Response from "./Response";
 import { useFlags } from "flagsmith/react";
+import Navbar from "./Navbar";
 
 function Home() {
   const [location, setLocation] = useState("");
   const [category, setCategory] = useState("");
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [display, setDisplay] = useState(true);
+
+  const flags = useFlags(["maintainence"]);
+  const isMaintenance = flags.maintainence.enabled;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,37 +29,47 @@ function Home() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        {!loading && response === null && (
-          <>
-            {!loading && (
-              <label style={locLabel}>
-                Please enter the location:
-                <br />
-                <input
-                  type="text"
-                  value={location}
-                  style={locInput}
-                  onChange={(e) => setLocation(e.target.value)}
-                  placeholder="Location"
-                />
-              </label>
-            )}
+    <>
+      {isMaintenance ? (
+        <h2 style={{ marginTop: "5rem", textAlign: "center" }}>
+          Website is currently under maintainence.
+        </h2>
+      ) : (
+        <div>
+          <Navbar />
+          <form onSubmit={handleSubmit}>
+            {!loading && response === null && (
+              <>
+                {!loading && (
+                  <label style={locLabel}>
+                    Please enter the location:
+                    <br />
+                    <input
+                      type="text"
+                      value={location}
+                      style={locInput}
+                      onChange={(e) => setLocation(e.target.value)}
+                      placeholder="Location"
+                    />
+                  </label>
+                )}
 
-            {!loading && (
-              <button style={locSubmit} type="submit">
-                Submit
-              </button>
+                {!loading && (
+                  <button style={locSubmit} type="submit">
+                    Submit
+                  </button>
+                )}
+              </>
             )}
-          </>
-        )}
-      </form>
-      {loading && <Spinner size={60} style={"auto"} />}
-      {response && <Response response={response} />}
-    </div>
+          </form>
+          {loading && <Spinner size={60} style={"auto"} />}
+          {response && <Response response={response} />}
+        </div>
+      )}
+    </>
   );
 }
+
 const locLabel = {
   display: "flex",
   flexDirection: "column",
