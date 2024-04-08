@@ -5,6 +5,8 @@ import Response from "./Response";
 import { useFlags } from "flagsmith/react";
 import Navbar from "./Navbar";
 import ReactWave from "./ReactWave";
+import HomeBanners from "./HomeBanners";
+import Logo from "../../public/logo.png";
 
 function Home() {
   const [location, setLocation] = useState("");
@@ -42,6 +44,15 @@ function Home() {
           <form onSubmit={handleSubmit}>
             {!loading && response === null && (
               <>
+                <img
+                  src={Logo}
+                  alt="logo"
+                  style={{
+                    width: "10rem",
+                    margin: "auto",
+                    display: "block",
+                  }}
+                />
                 {!loading && (
                   <label style={locLabel}>
                     Please enter the location:
@@ -64,6 +75,33 @@ function Home() {
               </>
             )}
           </form>
+          {!loading && response === null && (
+            <>
+              <div style={bannerDiv}>
+                <HomeBanners
+                  dark={isDark}
+                  question={"What does the platform do?"}
+                  description={
+                    '"Adventurize" suggests personalized travel itineraries based on location, weather, and user preferences.'
+                  }
+                />
+                <HomeBanners
+                  question={"Who are the target users?"}
+                  description={
+                    "Travelers seeking curated adventure experiences aligned with their interests and the local climate."
+                  }
+                  dark={isDark}
+                />
+                <HomeBanners
+                  question={"The reason behind building this project?"}
+                  description={
+                    "To streamline travel planning and provide tailored recommendations for memorable adventures worldwide."
+                  }
+                  dark={isDark}
+                />
+              </div>
+            </>
+          )}
           {loading && <Spinner size={60} style={"auto"} />}
           {response && <Response response={response} />}
           <ReactWave dark={isDark} />
@@ -75,7 +113,7 @@ function Home() {
 const homeDivDark = {
   backgroundColor: "#090f1a",
   height: "100vh",
-  color: "white",
+  color: "#c7d4ca",
 };
 const homeDivLight = {
   height: "100vh",
@@ -84,7 +122,7 @@ const locLabel = {
   display: "flex",
   flexDirection: "column",
   width: "20%",
-  margin: "4rem auto 2rem auto",
+  margin: "1rem auto 2rem auto",
 };
 const locInput = {
   margin: "0.5rem 0",
@@ -101,4 +139,11 @@ const locSubmit = {
   fontWeight: 800,
   cursor: "pointer",
 };
+const bannerDiv = {
+  display: "flex",
+  width: "90%",
+  margin: "3rem auto",
+  gap: "1rem",
+};
+
 export default Home;

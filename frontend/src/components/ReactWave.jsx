@@ -1,8 +1,8 @@
 import React from "react";
 import Wave from "react-wavify";
 
-const ReactWave = ({dark}) => (
-  <div style={dark? waveDark : waveLight}>
+const ReactWave = ({ dark }) => (
+  <div style={dark ? waveDark : waveLight}>
     <Wave
       fill="#007bff"
       paused={false}
@@ -13,6 +13,17 @@ const ReactWave = ({dark}) => (
         speed: 0.15,
       }}
     />
+    <p
+      style={{
+        textAlign: "center",
+        color: "white",
+        zIndex: 2,
+                background: "#007bff",
+        paddingBottom:"1rem"
+      }}
+    >
+      &copy; Parikshit Adhikari, 2024
+    </p>
   </div>
 );
 const waveDark = {
