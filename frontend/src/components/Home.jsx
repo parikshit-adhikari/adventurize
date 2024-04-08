@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Spinner from "./Spinner";
 
 function Home() {
   const [location, setLocation] = useState("");
@@ -38,7 +39,7 @@ function Home() {
 
         <button style={locSubmit} type="submit">Submit</button>
       </form>
-      {loading && <p>Loading...</p>}
+      {loading && <Spinner size={60} style={"auto"}/>}
       {response && (
         <div>
           <h2>{response.message}</h2>
@@ -78,8 +79,8 @@ const locInput = {
   padding: "0.5rem",
 }
 const locSubmit = {
-  display: "block", // Ensure the button takes full width
-  margin: "0 auto", // Center the button horizontally
+  display: "block", 
+  margin: "0 auto", 
   padding: "0.5rem 1rem",
   backgroundColor: "#007bff",
   border: "none",
