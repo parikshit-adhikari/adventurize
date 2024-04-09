@@ -34,7 +34,7 @@
 
 ## Problem Statement
 
-# <p align="center"><img src="https://github.com/parikshit-adhikari/adventurize/blob/main/assets/problem.png" width=750 height=425 /></p>
+# <p align="center"><img src="https://github.com/parikshit-adhikari/adventurize/blob/main/assets/problems.png" width=750 height=425 /></p>
 
 ## Solutions
 
