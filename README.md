@@ -50,29 +50,28 @@
 
 ## Features
 
-- Personalized Adventures
+- Landing Page
 
-  Plan your next adventure with ease! Create detailed itineraries, set reminders, and collaborate with friends to organize unforgettable trips.
+  Plan your next adventure with ease! 
   <details>
     <summary>UI of landing page</summary>
     <img src="https://github.com/parikshit-adhikari/adventurize/blob/main/assets/image1.png" width=750/>
   </details>
 
-- Adventure Curation
+- Dark Theme
 
-  Discover hidden gems and must-visit spots tailored to your interests and preferences. Receive personalized recommendations based on your past adventures and user reviews.
-
+  Flagsmith to toggle between light and dark theme.
   <details>
-    <summary>Location based Curating</summary>
+    <summary>UI of landing page (Dark Mode)</summary>
     <img src="https://github.com/parikshit-adhikari/adventurize/blob/main/assets/image2.png" width=750/>
 
   </details>
 
 - Engaging Descriptions
 
-  Document your adventures with rich multimedia content. Write journal entries, upload photos and videos, and share your experiences with the adventurize community.
+  Discover hidden gems and must-visit spots tailored to your interests and preferences. Receive personalized recommendations based location.
   <details>
-    <summary>Available adventures</summary>
+    <summary>Location and their descriptions</summary>
     <img src="https://github.com/parikshit-adhikari/adventurize/blob/main/assets/image3.png" width=750/>
   </details>
 
