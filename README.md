@@ -109,9 +109,9 @@ Before running adventurize, you will need an OpenAI API key from Gemini Services
 
 Navigate to frontend side by:
 
-    ```bash
-    cd frontend
-    ```
+   ```bash
+   cd frontend
+   ``` 
 
 3. Install the required dependencies:
 
