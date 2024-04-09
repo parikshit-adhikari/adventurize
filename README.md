@@ -107,13 +107,13 @@ Before running adventurize, you will need an OpenAI API key from Gemini Services
    cd backend
    ``` 
 
-Navigate to frontend side by:
+3. Navigate to frontend side by:
 
    ```bash
    cd frontend
    ``` 
 
-3. Install the required dependencies:
+4. Install the required dependencies:
 
 For both backend and frontend side:
 
@@ -121,9 +121,9 @@ For both backend and frontend side:
 npm i
 ```
 
-4. Setting up .env file for API Keys
+5. Setting up .env file for API Keys 
 
-- Create a .env file
+- Create a .env file inside backend directory
 
   ```bash
   # inside .env file
@@ -148,6 +148,7 @@ npm run dev
 
 ## Dependencies
 
+- Flagsmith
 - Gemini API
 - Open Weather Map  
 - cors
