@@ -48,7 +48,7 @@ function Home() {
                   src={Logo}
                   alt="logo"
                   style={{
-                    width: "10rem",
+                    width: "15rem",
                     margin: "auto",
                     display: "block",
                   }}
@@ -123,6 +123,7 @@ const locLabel = {
   flexDirection: "column",
   width: "20%",
   margin: "1rem auto 2rem auto",
+  fontSize: "1.5rem"
 };
 const locInput = {
   margin: "0.5rem 0",
@@ -131,13 +132,14 @@ const locInput = {
 const locSubmit = {
   display: "block",
   margin: "0 auto",
-  padding: "0.5rem 1rem",
+  padding: "0.75rem 1.5rem",
   backgroundColor: "#007bff",
   border: "none",
   borderRadius: "0.25rem",
   color: "white",
   fontWeight: 800,
   cursor: "pointer",
+  fontSize: "1rem"
 };
 const bannerDiv = {
   display: "flex",
