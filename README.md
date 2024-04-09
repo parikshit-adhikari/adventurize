@@ -77,7 +77,7 @@
 
 ## Demo
 
-![Link]
+https://github.com/parikshit-adhikari/adventurize/assets/148355925/98f2496d-3c40-4fc9-b33c-c1b2e84ce45c
 
 ## Installation
 
